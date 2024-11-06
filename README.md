@@ -8,11 +8,11 @@ This script provides a simple way to gather a bunch of image files and create th
 # Usage (short version)
 `makeSlideShow.sh FILE [DURATION [TRANSITION_DURATION]]`
 
-FILE is mandatory; this file will be created or overwritten.
+FILE (mandatory) - this file is the only output of the script and it will be either created or overwritten.
 
-DURATION - how long each picture will be displayed (seconds)
+DURATION (optional) - how long each picture will be displayed (seconds)
 
-TRANSITION_DURATION - how many seconds it takes to fade from a picture to the next
+TRANSITION_DURATION (optional) - how many seconds it takes to fade from a picture to the next
 
 **IMPORTANT**: The script uses a regex to look for all image files in $PWD and generate the relevant content, so it must be run from where the pictures reside.
 The regex can be found at about line 40, column 36 as of the first uploaded version.
