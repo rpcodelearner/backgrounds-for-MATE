@@ -18,7 +18,7 @@ then
   else
     echo -n "Could not understand 2nd parameter '"
     echo -n "$2"
-    echo "' as a number => using default value"
+    echo "' as a number => using default value: " "$DURATION"
   fi
 fi
 
@@ -30,7 +30,7 @@ then
   else
     echo -n "Could not understand 3rd parameter '"
     echo -n "$3"
-    echo "' as a number => using default value"
+    echo "' as a number => using default value: " "$TRANSITION_DURATION"
   fi
 fi
 
@@ -105,3 +105,4 @@ done
 
 # Close XML structure
 echo "$CLOSING_TAG" >> "$1"
+echo "Done."
