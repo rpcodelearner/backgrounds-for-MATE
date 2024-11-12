@@ -77,24 +77,21 @@ CLOSING_TAG="</background>"
 # Begin writing to specified file
 echo "$HEADER" > "$1"
 
-# Files
+# Files and Transitions
 declare -a filePaths
+
 for f in "${imageFilesArray[@]}" ; do
   filePaths+=("$PWD/$f") ;
 done
-for element in "${filePaths[@]}" ; do
-  {
-    echo -n "$PREFIX" ;
-    echo -n "$element" ;
-    echo "$SUFFIX" ;
-  } >> "$1"
-done
 
-# Transitions
 numberOfFiles="${#filePaths[@]}"
+
 filePaths+=("${filePaths[0]}")  # for simplicity we add first element again at the end
 for (( index=0 ; "$index" < "$numberOfFiles" ; index++ )) ; do
   {
+    echo -n "$PREFIX" ;
+    echo -n "${filePaths[$index]}" ;
+    echo "$SUFFIX" ;
     echo -n "$TRANSITION_PREFIX" ;
     echo -n "${filePaths[$index]}" ;
     echo -n "$TRANSITION_MID" ;
